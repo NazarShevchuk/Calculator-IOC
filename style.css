@@ -1,99 +1,80 @@
-* {
-  padding: 0;
+/* colors
+bg #000
+orange #ff9501
+gery #a6a6a6
+white #fdfdfd
+ */
+
+.calc {
+  margin: 50px auto;
+  width: 300px;
+  height: 500px;
+  /* border: 1px solid #000; */
+  border-radius: 20px;
+  background: #000;
+  color: #fff;
+  font-family: Arial;
+  padding: 18px;
+  box-shadow: 4px 4px 4px #4f4f4f;
+}
+
+.calc-screen {
+  height: 125px;
+  padding: 10px;
+  display: grid;
+  justify-items: end;
+  align-items: end;
+  margin-bottom: 25px;
+}
+
+.calc-screen p {
+  text-align: right;
+  font-size: 4rem;
   margin: 0;
 }
 
-html,
-body #fullheight {
-  min-height: 100% !important;
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: black;
-}
-
-.container {
-  height: 100%;
-  background-color: black;
-}
-
-.result {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  color: white;
-  height: 39%;
-}
-
-.result span {
-  margin-right: 15px;
-  font-size: 100px;
-  justify-self: flex-end;
-  margin-top: 300px;
-}
-
 .buttons {
-  width: 100%;
-  height: 60%;
-  background-color: black;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-areas:
+    "ac plus-minus percent division"
+    "seven eigth nine multi"
+    "four five six minus"
+    "one two three plus"
+    "zero zero dot equal";
+  grid-gap: 7px;
+  justify-items: center;
 }
 
-.item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  color: white;
-  border-radius: 100%;
-  width: 90px;
-  height: 90px;
-  padding: 10px;
+.btn {
+  width: 60px;
+  height: 60px;
+  background: #333;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 1.5rem;
   cursor: pointer;
-  align-self: center;
-  justify-self: center;
+  user-select: none;
 }
 
-.percent {
-  background-color: #a5a5a5;
-  color: black;
-  border: none;
+.btn.zero {
+  grid-area: zero;
+  width: 100%;
+  border-radius: 34px;
 }
 
-.item1 {
-  background-color: #a5a5a5;
-  border: none;
+.btn:hover {
+  filter: brightness(120%);
 }
 
-.item3 {
-  background-color: #ff9f0a;
-  border: none;
+.btn:active {
+  filter: brightness(90%);
 }
 
-.numbers,
-.comma {
-  background-color: #343434;
-  border: none;
+.btn.bg-grey {
+  background: #a6a6a6;
 }
 
-.negative,
-.clear {
-  color: black;
-}
-
-.itemZero {
-  background-color: #343434;
-  width: 195px;
-  border-radius: 135px;
-  grid-column: span 2;
-  border: none;
-}
-
-.selectedSigh {
-  background-color: white;
-  color: #ff9f0a;
-}
-
-.changedStyles {
-  font-size: 10px;
+.btn.bg-orange {
+  background: #ff9501;
 }
